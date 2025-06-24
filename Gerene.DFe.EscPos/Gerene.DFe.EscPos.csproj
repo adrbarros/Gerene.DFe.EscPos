@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net462;netstandard2.0</TargetFrameworks>
+		<TargetFrameworks>net6.0;net8.0;net462;netstandard2.0</TargetFrameworks>
 		<Company>Gerene Sistemas de Informação</Company>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageProjectUrl>https://github.com/marcosgerene/Gerene.DFe.EscPos</PackageProjectUrl>
-		<Version>1.0.26</Version>
+		<Version>2.0.0</Version>
 		<PackageLicenseExpression></PackageLicenseExpression>
 		<Description>Impressão em impressora termica para DFes via EscPos e derivados (EscBema, EscDaruma, EscElgin, entre outros) nativo em .NET.
 
@@ -13,7 +13,9 @@ Atualmente a biblioteca atende os documentos SAT e NFCe nos formatos 58 e 80mm.
 
 Permite comunicação via RAW (USB), TCP e Serial.
 		</Description>
-		<PackageReleaseNotes>1.0.26 - Adiciona a propriedade "PaginaCodigo" permitindo alterar a pagina de codigo da impressora
+		<PackageReleaseNotes>2.0.0 - Remove impressão do SAT, descontinuado pelo estado de SP. Para impressão do SAT, utilize diretamente o projeto OpenAC.Net.Sat ou a versão 1.0.27 do Gerene.DFe.EscPos.
+1.0.27 - Se o cEAN for SEM GTIN, mesmo que esteja configurado para usar Barras como Código, utiliza o cProd
+1.0.26 - Adiciona a propriedade "PaginaCodigo" permitindo alterar a pagina de codigo da impressora
 1.0.25 - QRCode não estava saindo na lateral para NFCe
 1.0.24 - Adiciona File (ConfiguracaoFile) às formas de comunicação
 1.0.23 - Removendo o antigo DFe.NET e migrando para Hercules.NET
@@ -42,10 +44,9 @@ Permite comunicação via RAW (USB), TCP e Serial.
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Hercules.NET.NFe.NFCe" Version="2025.1.16.147" />
-		<PackageReference Include="OpenAC.Net.EscPos" Version="1.5.0" />
-		<PackageReference Include="OpenAC.Net.Sat" Version="1.5.0.2" />
-		<PackageReference Include="System.Drawing.Common" Version="8.0.5" />
+		<PackageReference Include="Hercules.NET.NFe.NFCe" Version="2025.6.4.1947" />
+		<PackageReference Include="OpenAC.Net.EscPos" Version="1.6.0" />
+		<PackageReference Include="System.Drawing.Common" Version="9.0.6" />
 	</ItemGroup>
 
 	<ItemGroup>
