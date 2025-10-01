@@ -16,7 +16,7 @@ A biblioteca conta com dois demos escritos em Winforms (Windows) e Avalonia (mul
 
 Exemplo de uso:
 ```
-using (var _printer = new NFCePrinter()) //ou new SatPrinter() para SAT até a versão 1.0.27
+using (var _printer = new NFCePrinter()) //ou new SatPrinter() para SAT nas versões 1.0.X
 {
 	_printer.Protocolo = ProtocoloEscPos.EscPos; //Protocolo de comunicação	
 	_printer.Impressora = "Nome da impressora"; //Para RAW nome da impressora. Para TCP o IP da impressora na rede. Para serial a porta.
@@ -74,8 +74,10 @@ OpenAC.Net.Sat (desserialização do xml do SAT) - https://github.com/OpenAC-Net
 
 Change log:
 ----
+2.0.1 - Atualiza a versão do Hercules corrigindo #17 (corresponde à versão legada 1.0.28)<br/>
 2.0.0 - Remove impressão do SAT, descontinuado pelo estado de SP (as versões 1.0.X continuarão sendo suportadas pela biblioteca).<br/>
 
+1.0.28 - Corresponde à versão 2.0.1.<br/>
 1.0.27 - Se o cEAN for SEM GTIN, mesmo que esteja configurado para usar Barras como Código, utiliza o cProd<br/>
 1.0.26 - Adiciona a propriedade "PaginaCodigo" permitindo alterar a pagina de codigo da impressora<br/>
 1.0.25 - QRCode não estava saindo na lateral para NFCe<br/>
